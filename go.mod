@@ -1,4 +1,4 @@
-module github.com/eidolons/flyway
+module github.com/eidolons/nyx
 
 go 1.17
 

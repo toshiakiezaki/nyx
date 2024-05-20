@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/eidolons/nyx/extractors"
+	"github.com/eidolons/nyx/services"
 	"github.com/spf13/cobra"
 )
 
@@ -15,7 +15,9 @@ Info lets you know where you stand. At a glance you will see which migrations
 have already been applied, which other ones are still pending, when they were
 executed and whether they were successful or not.`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("info called")
+		data := extractors.InfoSettings(*cmd, args)
+
+		services.Run(data)
 	},
 }
 

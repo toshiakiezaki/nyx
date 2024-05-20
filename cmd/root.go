@@ -37,7 +37,13 @@ func Execute() {
 func init() {
 	cobra.OnInitialize(initConfig)
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is ${HOME}/nyx.yaml)")
+	// Configuration file properties
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Configuration file (default is ${HOME}/nyx.yaml)")
+	// Database connection properties
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "driver", "", "Driver name of the database")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "url", "", "URL to use to connect the database based on the driver settings")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "user", "", "User to use to connect to the database")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "password", "", "Password to use to connect to the database")
 }
 
 func initConfig() {
